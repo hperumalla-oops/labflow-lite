@@ -11,5 +11,18 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  app:
+    build: .
+    container_name: labflow-app
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/labflow
+      SPRING_DATASOURCE_USERNAME: labflow
+      SPRING_DATASOURCE_PASSWORD: labflow
+      JWT_SECRET: change-me-change-me-change-me-change-me-1234
+    ports:
+      - "8080:8080"
+      
 volumes:
   pgdata:

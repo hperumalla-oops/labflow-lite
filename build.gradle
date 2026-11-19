@@ -51,3 +51,7 @@ tasks.withType(Test).configureEach {
     jvmArgs '-Duser.timezone=Asia/Kolkata'
 }
 
+tasks.named('jar') {
+    enabled = false
+}
+
