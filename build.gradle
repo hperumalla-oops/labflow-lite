@@ -46,3 +46,8 @@ tasks.named('test') {
 tasks.named('bootRun') {
     jvmArgs '-Duser.timezone=Asia/Kolkata'
 }
+
+tasks.withType(Test).configureEach {
+    jvmArgs '-Duser.timezone=Asia/Kolkata'
+}
+
