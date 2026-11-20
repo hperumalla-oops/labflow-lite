@@ -32,10 +32,8 @@ DRAFT → SUBMITTED → APPROVED | REJECTED
 ```
 Testcontainers runs real Postgres. Covers happy path, illegal transition, role denial, self-approval, concurrent approval.
 
-## Deliberately left out
-Outbox pattern, Kubernetes, hash-chained audit log, frontend, refresh tokens. Scoped for a 3-day build.
 
-## Production gaps (known)
+## Production gaps
 - Dev seed users. Replace with real onboarding.
 - JWT secret from env var. Use secret manager.
 - No rate limiting or token revocation.
