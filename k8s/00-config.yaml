@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: labflow
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: labflow-secrets
+  namespace: labflow
+type: Opaque
+stringData:
+  DB_PASSWORD: labflow
+  JWT_SECRET: change-me-change-me-change-me-change-me-1234
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: labflow-config
+  namespace: labflow
+data:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/labflow
+  SPRING_DATASOURCE_USERNAME: labflow
